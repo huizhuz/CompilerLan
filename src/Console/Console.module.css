@@ -1,0 +1,51 @@
+.ConsoleWrapper {
+    margin: 1rem;
+    width: 30vw;
+    height: 370px;
+    border: 1px solid #3474748c;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: #347474;
+    color: white;
+    font-family: 'Comfortaa', cursive;
+}
+
+.Console {
+    width: 100%;
+    border: 1px solid #63b7afaf; 
+    border-radius: 5px;
+    height: 16rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* .ClearButton {
+    margin-top: 0.8rem;
+    height: 2.5rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ee8572;
+    color: white;
+    border-radius: 25px;
+    border: 2px solid #ee8572;
+    transition: all 0.4s ease;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.ClearButton:hover {
+    color: #ee8572;
+    background-color: white;
+    cursor: pointer;
+} */
+
+
+@media screen and (max-width: 700px) {
+    .ConsoleWrapper {
+      height: unset;
+      width: 80vw;
+    }
+}

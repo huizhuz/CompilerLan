@@ -1,0 +1,28 @@
+.Footer {
+    margin: 0;
+    height: 150px;
+    text-align: center;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.8rem;
+}
+
+.Footer a{
+    text-decoration: none;
+    color:#EE8572;
+    animation: blink 1.3s infinite alternate;
+}
+.Footer a:hover{
+    font-weight: bold;
+}
+
+@keyframes blink {
+    from {
+        color: #35495e;
+    }
+    to {
+        color: #EE8572;
+    }
+}

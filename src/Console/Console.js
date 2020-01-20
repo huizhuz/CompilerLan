@@ -1,9 +1,12 @@
 import React from 'react';
+import Styles from './Console.module.css'
 
-const Console = () => {
+const Console = (props) => {
     return (
-        <div>
-            
+        <div className={Styles.ConsoleWrapper}>
+            <p>Console</p>
+            <div className={Styles.Console}></div>
+            {/* <div className={Styles.ClearButton}>Clear</div> */}
         </div>
     );
 }

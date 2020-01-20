@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react';
+import Styles from './TextEditor.module.css'
 
-export default class TextEditor extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+const TextEditor = (props) => {
+    return (
+        <div className={Styles.TextEditorWrapper}>
+            <p>Write your code here: </p>
+            <textarea />
+            <div className={Styles.CompileButton}>Compile</div>
+        </div>
+    )
 }
+
+export default TextEditor

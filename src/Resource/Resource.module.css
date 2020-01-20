@@ -1,0 +1,21 @@
+.Resource {
+    margin: 1rem;
+    height: 3rem;
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ee8572;
+    color: white;
+    border-radius: 25px;
+    border: 2px solid #ee8572;
+    transition: all 0.4s ease;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.Resource:hover {
+    color: #ee8572;
+    background-color: white;
+    cursor: pointer;
+}
