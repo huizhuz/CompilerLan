@@ -4,24 +4,31 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Resource from './Resource/Resource'
 import TextEditor from './TextEditor/TextEditor';
-import Console from './Console/Console'
+import Console from './Console/Console';
 
 class App extends Component {
   state = {
-    input: 'hihi',
-    output: 'hoho'
+    input: '',
   }
+
+  writeCode = (e) => {
+    this.setState({input: e.target.value});
+  }
+
+  
   render() {
     return (
       <div className={Styles.App} >
         <style>
           @import url('https://fonts.googleapis.com/css?family=Comfortaa:700|Quicksand:300,400&display=swap');
-    </style>
+        </style>
         <Header></Header>
         <Resource></Resource>
         <div className={Styles.Compiler}>
-          <TextEditor code={this.state.input} log={this.state.output}></TextEditor>
-          <Console log={this.state.output}></Console>
+          <TextEditor code={this.state.input}  
+                      writeCode={this.writeCode}
+                      ></TextEditor>
+          <Console></Console>
         </div>
         <Footer></Footer>
       </div>
