@@ -12,10 +12,10 @@ export function addErrorMessages(errorMessage) {
     }
 }
 
-export function addOutput(outputMessage) {
+export function addOutput(output) {
     return {
         type: ADD_OUTPUT,
-        outputMessage
+        output
     }
 }
 

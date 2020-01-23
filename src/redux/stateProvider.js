@@ -3,8 +3,9 @@ import { ADD_ERROR_MESSAGE, ADD_OUTPUT, CLEAR_ALL } from './actions';
 
 function mapStateToProps(state) {
     return {
-        errorMessages: [],
-        output: []
+        errorMessages: state.errorMessages,
+        output: state.output,
+        hasError: state.hasError
     };
 }
 

@@ -11,14 +11,11 @@ class TextEditor extends Component {
         this.props.clearAll();
         const tokens = this.lexer(str);
         const parsedAST = this.parser(tokens);
-        console.log(parsedAST);
         this.execute(parsedAST);
-        console.log(this.props.output)
-        console.log(this.props.errorMessages)
     };
 
     isValidIdentifier = (str) => {
-        return str ?? str.match(letters) ? str.match(letters).length === str.length : false;
+        return str ?? str.match(letters) ?? str.match(letters).length === str.length;
     }
     // The lexer turns the input string into an array of tokens. 
     lexer = (str) => {
@@ -59,7 +56,7 @@ class TextEditor extends Component {
                     // Identifier needs to be followed by an assignment operator
                     if (tokens[0] && tokens[0].value === '=') {
                         tokens.shift();
-                        if (!isNaN(tokens[0].value)) {
+                        if (tokens[0] && !isNaN(tokens[0].value)) {
                             declaration.identifier.value = parseInt(tokens.shift().value);
                             declaredIdentifiers.push({
                                 name: declaration.identifier.name,
@@ -67,7 +64,7 @@ class TextEditor extends Component {
                             })
                             AST.body.push(declaration);
                         } else {
-                            this.props.addErrorMessage('Value assigned to the identifier should be a number!');
+                            this.props.addErrorMessage('Value should be assigned to identifier!');
                         }
                     } else {
                         this.props.addErrorMessage('Identifier is undefined!');
@@ -88,7 +85,7 @@ class TextEditor extends Component {
                         expression.expressions.push(getIdentifiersValue(current_token.value))
                     }
 
-                    let operator = tokens.shift().value;
+                    let operator = tokens.shift()?.value;
                     if (operators.includes(operator)) {
                         expression.operator = operator;
                         let right_hand = tokens.shift().value;
@@ -127,13 +124,13 @@ class TextEditor extends Component {
                 } else {
                     switch (operator) {
                         case '+':
-                            this.props.addOutput(leftHand + rightHand);
+                            this.props.addOutput(parseInt(leftHand + rightHand));
                             break;
                         case '-':
-                            this.props.addOutput(leftHand - rightHand);
+                            this.props.addOutput(parseInt(leftHand - rightHand));
                             break;
                         case '*':
-                            this.props.addOutput(leftHand * rightHand);
+                            this.props.addOutput(parseInt(leftHand * rightHand));
                             break;
                         case '/':
                             this.props.addOutput(parseInt(leftHand / rightHand));
