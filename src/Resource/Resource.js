@@ -1,9 +1,10 @@
 import React from 'react';
-import Styles from './Resource.module.css'
+import Styles from './Resource.module.css';
+import pdf from 'Lan_Compiler_HuizhuZhang.pdf';
 
 const Resource = () => {
     return (
-        <a href="../assets/LAN_Description.pdf" download className={Styles.Resource}>
+        <a href={pdf} download className={Styles.Resource}>
             See the syntax LAN supports
         </a>
     );

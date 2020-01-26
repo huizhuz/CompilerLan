@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Styles from './TextEditor.module.css'
-import withState from '../redux/stateProvider'
+import withState from '../redux/stateProvider';
 
 const letters = /^[A-Za-z]+$/;
 const operators = ['+', '-', '*', '/', '%'];
