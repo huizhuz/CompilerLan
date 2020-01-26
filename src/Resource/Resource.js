@@ -1,6 +1,6 @@
 import React from 'react';
 import Styles from './Resource.module.css';
-import pdf from 'Lan_Compiler_HuizhuZhang.pdf';
+import pdf from '../files/Lan_Compiler_HuizhuZhang.pdf';
 
 const Resource = () => {
     return (
