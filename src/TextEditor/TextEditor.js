@@ -119,7 +119,7 @@ class TextEditor extends Component {
                 let leftHand = el.expressions[0];
                 let rightHand = el.expressions[1];
                 let operator = el.operator;
-                if ((operator === '/' || '%') && rightHand == 0) {
+                if ((operator == '/' || '%') && rightHand == 0) {
                     this.props.addErrorMessage('Algebra 101, nothing can be divided by zero.');
                 } else {
                     switch (operator) {
